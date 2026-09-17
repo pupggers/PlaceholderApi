@@ -1,6 +1,6 @@
 {
   "name": "pup/placeholderapi",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "A simple and efficient placeholder system for PocketMine-MP. Originally created for the Kyro core.",
   "type": "library",
   "keywords": ["pocketmine", "placeholder", "api", "virion", "pmmp", "plugin"],
@@ -10,8 +10,14 @@
       "name": "pupggers"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/pupggers/PocketMine-MP"
+    }
+    ],
   "require": {
-    "pocketmine/pocketmine-mp": "*"
+    "axolotl-pm/pocketmine-mp": "dev-stable"
   },
   "autoload": {
     "classmap": [

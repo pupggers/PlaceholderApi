@@ -35,8 +35,6 @@ class PlaceholderApi
         'bold'         => TF::BOLD,
         'italic'       => TF::ITALIC,
         'obfuscated'   => TF::OBFUSCATED,
-        'underline'    => TF::UNDERLINE,
-        'strikethrough'=> TF::STRIKETHROUGH,
         'reset'        => TF::RESET
     ];
 
