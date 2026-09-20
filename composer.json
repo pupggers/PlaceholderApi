@@ -23,7 +23,5 @@
       "spec": "3.1",
       "namespace-root": "pup\\placeholderapi"
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
