@@ -101,7 +101,7 @@ class PlaceholderManager
 
         $result = preg_replace_callback(
             '/{([a-zA-Z0-9_]+)(?::([^}]+))?}/',
-            function($matches) use ($player) {
+            function ($matches) use ($player) {
                 $identifier = strtolower($matches[1]);
                 $params = $matches[2] ?? null;
 

@@ -15,7 +15,7 @@ abstract class PlayerPlaceholder extends AbstractPlaceholder
     public function process(?Player $player, ?string $params = null): string
     {
         if ($player === null) {
-            return "";
+            return '';
         }
 
         return $this->processPlayer($player, $params);

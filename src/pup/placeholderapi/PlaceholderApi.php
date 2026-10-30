@@ -85,129 +85,201 @@ class PlaceholderApi
 
         $manager = self::getManager();
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return $player->getName();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_name"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_name');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return $player->getName();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_display"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_display');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return $player->getDisplayName();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_health"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_health');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)round($player->getHealth(), 1);
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_max_health"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_max_health');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)$player->getMaxHealth();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_food"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_food');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)$player->getHungerManager()->getFood();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_level"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_level');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)$player->getXpManager()->getXpLevel();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_xp"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_xp');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)$player->getXpManager()->getCurrentTotalXp();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_gamemode"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_gamemode');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return $player->getGamemode()->getEnglishName();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_ping"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_ping');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)$player->getNetworkSession()->getPing();
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_x"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_x');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)round($player->getPosition()->getX(), 2);
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_y"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_y');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)round($player->getPosition()->getY(), 2);
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_z"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_z');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return (string)round($player->getPosition()->getZ(), 2);
             }
         });
 
-        $manager->registerPlaceholder(new class extends PlayerPlaceholder {
-            public function __construct() { parent::__construct("player_world"); }
-            protected function processPlayer(Player $player, ?string $params): string {
+        $manager->registerPlaceholder(new class () extends PlayerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('player_world');
+            }
+            protected function processPlayer(Player $player, ?string $params): string
+            {
                 return $player->getWorld()->getFolderName();
             }
         });
 
         // Server placeholders
-        $manager->registerPlaceholder(new class extends ServerPlaceholder {
-            public function __construct() { parent::__construct("server_motd"); }
-            protected function processServer(?string $params): string {
+        $manager->registerPlaceholder(new class () extends ServerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('server_motd');
+            }
+            protected function processServer(?string $params): string
+            {
                 return Server::getInstance()->getMotd();
             }
         });
 
-        $manager->registerPlaceholder(new class extends ServerPlaceholder {
-            public function __construct() { parent::__construct("server_online"); }
-            protected function processServer(?string $params): string {
+        $manager->registerPlaceholder(new class () extends ServerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('server_online');
+            }
+            protected function processServer(?string $params): string
+            {
                 return (string)count(Server::getInstance()->getOnlinePlayers());
             }
         });
 
-        $manager->registerPlaceholder(new class extends ServerPlaceholder {
-            public function __construct() { parent::__construct("server_max"); }
-            protected function processServer(?string $params): string {
+        $manager->registerPlaceholder(new class () extends ServerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('server_max');
+            }
+            protected function processServer(?string $params): string
+            {
                 return (string)Server::getInstance()->getMaxPlayers();
             }
         });
 
-        $manager->registerPlaceholder(new class extends ServerPlaceholder {
-            public function __construct() { parent::__construct("server_tps"); }
-            protected function processServer(?string $params): string {
+        $manager->registerPlaceholder(new class () extends ServerPlaceholder {
+            public function __construct()
+            {
+                parent::__construct('server_tps');
+            }
+            protected function processServer(?string $params): string
+            {
                 return (string)round(Server::getInstance()->getTicksPerSecond(), 2);
             }
         });
@@ -215,7 +287,7 @@ class PlaceholderApi
         foreach (self::$colorMap as $colorName => $colorCode) {
             $manager->registerPlaceholder(new ClosurePlaceholder(
                 $colorName,
-                fn(?Player $player, ?string $params): string => $colorCode,
+                fn (?Player $player, ?string $params): string => $colorCode,
                 requiresPlayer: false,
                 supportsParameters: false
             ));
@@ -341,7 +413,7 @@ class PlaceholderApi
      */
     public static function createCharacterGradient(string $text, array $colors): string
     {
-        $result = "";
+        $result = '';
         $textLength = strlen($text);
         $colorCount = count($colors);
 

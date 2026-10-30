@@ -5,6 +5,7 @@ namespace pup\placeholderapi\placeholder;
 use Closure;
 use pocketmine\player\Player;
 use pup\placeholderapi\Placeholder;
+
 readonly class ClosurePlaceholder implements Placeholder
 {
     /**
@@ -18,7 +19,8 @@ readonly class ClosurePlaceholder implements Placeholder
         private Closure $handler,
         private bool    $requiresPlayer = false,
         private bool    $supportsParameters = false
-    ) {}
+    ) {
+    }
 
     public function getIdentifier(): string
     {

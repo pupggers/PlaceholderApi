@@ -6,7 +6,8 @@ abstract class AbstractPlaceholder implements Placeholder
 {
     public function __construct(
         private readonly string $identifier
-    ) {}
+    ) {
+    }
 
     public function getIdentifier(): string
     {
