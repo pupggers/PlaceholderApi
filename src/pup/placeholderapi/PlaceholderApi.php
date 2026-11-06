@@ -308,30 +308,6 @@ class PlaceholderApi
     }
 
     /**
-     * Register a custom placeholder handler using a callable (legacy support v1)
-     *
-     * @param string $identifier The placeholder identifier
-     * @param callable $handler Function that returns the replacement value (receives ?Player, ?string params)
-     * @param bool $requiresPlayer Whether this placeholder requires a player
-     * @param bool $supportsParameters Whether this placeholder supports parameters
-     * @return bool True if registered successfully
-     */
-    public static function registerPlaceholder(
-        string $identifier,
-        callable $handler,
-        bool $requiresPlayer = false,
-        bool $supportsParameters = false
-    ): bool {
-        $placeholder = new ClosurePlaceholder(
-            $identifier,
-            $handler(...),
-            $requiresPlayer,
-            $supportsParameters
-        );
-        return self::getManager()->registerPlaceholder($placeholder);
-    }
-
-    /**
      * Unregister a custom placeholder
      *
      * @param string $identifier The placeholder identifier to remove
@@ -364,18 +340,6 @@ class PlaceholderApi
     public static function parseMultiple(array $messages, ?Player $player = null): array
     {
         return self::getManager()->parseMultiple($messages, $player);
-    }
-
-    /**
-     * Parse color placeholders only
-     *
-     * @param string $message The message to parse
-     * @return string The message with colors applied
-     * @deprecated Use parse() instead, colors are now handled as regular placeholders
-     */
-    public static function parseColors(string $message): string
-    {
-        return self::parse($message);
     }
 
     /**
